@@ -1,0 +1,44 @@
+# Dune build artifacts
+_build/
+
+# OCaml compiled files
+*.cmi
+*.cmo
+*.cmx
+*.cmt
+*.cmti
+*.cma
+*.cmxa
+*.a
+*.o
+*.so
+*.obj
+*.lib
+*.dll
+*.dylib
+
+# OCaml executables
+*.exe
+*.native
+*.byte
+
+# Merlin configuration
+.merlin
+.merlin-conf/
+
+# Editor and IDE files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-*
+.DS_Store
+
+# OPAM
+_opam/
+*.install
+
+# Coverage
+bisect*.coverage
+_coverage/

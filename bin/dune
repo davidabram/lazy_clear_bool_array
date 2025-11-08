@@ -1,0 +1,4 @@
+(executable
+ (public_name bool_vector)
+ (name main)
+ (libraries bool_vector))

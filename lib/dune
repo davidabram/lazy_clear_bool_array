@@ -1,0 +1,3 @@
+(library
+ (name bool_vector)
+ (modules lazy_clear_bool_array))
