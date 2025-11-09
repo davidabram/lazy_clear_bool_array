@@ -1,6 +1,5 @@
 type t = {
   n : int;
-  values : bool array;
   ts : int array;
   mutable cur : int;
   mutable fv : int;
@@ -10,7 +9,11 @@ let length a = a.n
 
 let create n =
   if n < 0 then invalid_arg "Lazy_clear_bool_array.create: negative length";
-  { n; values = Array.make n false; ts = Array.make n 0; cur = 1; fv = 0 }
+  { n
+  ; ts = Array.make n 0
+  ; cur = 1
+  ; fv = 0
+  }
 
 let check_index a i =
   if i < 0 || i >= a.n then
@@ -18,12 +21,14 @@ let check_index a i =
 
 let set a i b =
   check_index a i;
-  a.values.(i) <- b;
-  a.ts.(i) <- a.cur
+  if b then
+    a.ts.(i) <- a.cur
+  else
+    a.ts.(i) <- a.fv
 
 let get a i =
   check_index a i;
-  if a.ts.(i) <= a.fv then false else a.values.(i)
+  a.ts.(i) > a.fv
 
 let clear a =
   a.fv <- a.cur;
