@@ -1,3 +1,4 @@
 (tests
- (names test_lazy_clear_bool_array)
- (libraries bool_vector))
+ (names test_lazy_clear_bool_array test_quickcheck)
+ (preprocess (pps ppx_jane))
+ (libraries core bool_vector))
